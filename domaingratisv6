@@ -26,10 +26,7 @@ CF_KEY=821d599ff7aeafbf73230ba3ac2f238f438f3
 set -euo pipefail
 
 read -p "Mau ip yang mana? : " IP
-if [[ $IP == "" ]]; then
-clear
-echo -e "${EROR} No Input Detected !"
-exit 1
+echo ${IP}
 echo "Updating DNS for ${SUB_DOMAIN}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
